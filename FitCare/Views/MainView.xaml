@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<maui:ReactiveContentPage x:TypeArguments="viewModels:MainViewModel" xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:maui="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
+                          xmlns:viewModels="clr-namespace:FitCare.ViewModels"
+                          x:Class="FitCare.MainPage" Title="" BackgroundColor="#353140">
+    
+    <Grid Padding="0" Margin="0">
+        <ScrollView>
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Center">
+
+                <Label
+                    Text="Welcome to .NET Multi-platform App UI"
+                    SemanticProperties.HeadingLevel="Level2"
+                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                    FontSize="18" TextColor="White"
+                    HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+    
+
+</maui:ReactiveContentPage>
