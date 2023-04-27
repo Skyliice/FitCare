@@ -1,4 +1,5 @@
-﻿using System.Reactive.Disposables;
+﻿using System.Globalization;
+using System.Reactive.Disposables;
 using FitCare.ViewModels;
 using ReactiveUI;
 using ReactiveUI.Maui;
@@ -13,6 +14,8 @@ public partial class MainPage : ReactiveContentPage<MainViewModel>
         InitializeComponent();
 
         ViewModel = new MainViewModel();
+        CalendarView.CalendarCulture = new CultureInfo("ru-RU");
+        CalendarView.SelectedDate = DateTime.Today;
         this.WhenActivated(disposable =>
         {
            

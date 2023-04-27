@@ -2,9 +2,49 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FitCare"
+             xmlns:maui="clr-namespace:CalendarView.MAUI;assembly=CalendarView.MAUI"
              x:Class="FitCare.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Style x:Key="CalendarBorderStyle" TargetType="Border">
+                <Setter Property="Stroke" Value="#565659"></Setter>
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                <Setter Property="StrokeShape" Value="RoundRectangle 40,40,40,40"></Setter>
+            </Style>
+            <Style x:Key="CalendarDayStyle" TargetType="maui:CalendarDayView">
+                <Setter Property="DayColor" Value="White"></Setter>
+                <Setter Property="DayFontSize" Value="16"></Setter>
+                <Setter Property="DayFontAttributes" Value="Bold"></Setter>
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+            </Style>
+            <Style x:Key="CalendarLastDayStyle" TargetType="maui:CalendarDayView">
+                <Setter Property="DayColor" Value="Wheat"></Setter>
+                <Setter Property="DayFontAttributes" Value="Bold"></Setter>
+                <Setter Property="DayFontSize" Value="16"></Setter>
+            </Style>
+            <Style x:Key="CalendarDayNameStyle" TargetType="maui:CalendarDayNameView">
+                <Setter Property="DayNameColor" Value="White"></Setter>
+                <Setter Property="DayNameFontSize" Value="16"></Setter>
+            </Style>
+            <Style x:Key="MonthLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontSize" Value="16"></Setter>
+                <Setter Property="Margin" Value="10,10"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+            </Style>
+            <Style x:Key="SelectedCalendarDateStyle" TargetType="maui:CalendarDayView">
+                <Setter Property="DayColor" Value="Black"></Setter>
+                <Setter Property="DayFontSize" Value="16"></Setter>
+                <Setter Property="DayFontAttributes" Value="Bold"></Setter>
+                <Setter Property="DayTagIsVisible" Value="True"></Setter>
+                <Setter Property="DayTagFillColor" Value="White"></Setter>
+            </Style>
+            <Style x:Key="CalendarTodayStyle" TargetType="maui:CalendarDayView">
+                <Setter Property="DayColor" Value="FloralWhite"></Setter>
+                <Setter Property="DayFontSize" Value="16"></Setter>
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />

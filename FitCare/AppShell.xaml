@@ -4,12 +4,46 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:FitCare"
-    Shell.FlyoutBehavior="Flyout">
-
-    <FlyoutItem Title="Главная">
-        <Tab>
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"></ShellContent>
-        </Tab>
-    </FlyoutItem>
+    xmlns:views="clr-namespace:FitCare.Views"
+    xmlns:platform="clr-namespace:CommunityToolkit.Maui.Core.Platform;assembly=CommunityToolkit.Maui.Core"
+    xmlns:behaviors="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="{StaticResource Primary}">
+    <Shell.Behaviors>
+        <behaviors:StatusBarBehavior StatusBarColor="{StaticResource Secondary}" />
+    </Shell.Behaviors>
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" Padding="20,66,0,40">
+            <Label Text="FitCare" FontSize="24" FontAttributes="Bold" TextColor="White"></Label>
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#353140"
+                                  Offset="0.1" />
+                    <GradientStop Color="#565659"
+                                  Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+    </Shell.FlyoutHeader>
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid HeightRequest="45">
+                <Label Grid.Column="1" Text="{Binding Title}" FontSize="16" VerticalOptions="Center" TextColor="White" Margin="0"></Label>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Title="Главная"></ShellContent>
+    <ShellContent Title="Список упражнений" ContentTemplate="{DataTemplate views:ExerciseListView}"></ShellContent>
+    <ShellContent Title="Список программ тренировок"></ShellContent>
+    <ShellContent Title="Статистика"></ShellContent>
+    <Shell.FlyoutFooter>
+        <Grid HeightRequest="60" BackgroundColor="{StaticResource Secondary}">
+            <StackLayout Orientation="Vertical">
+                <Label Text="FitCare" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"></Label>
+                <Label Text="Made by Skylice" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"></Label>
+                <Label Text="2023" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"></Label>
+            </StackLayout>
+        </Grid>
+    </Shell.FlyoutFooter>
 
 </Shell>

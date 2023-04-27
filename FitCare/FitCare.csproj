@@ -49,6 +49,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="CalendarView.MAUI" Version="1.1.0" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="5.1.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <PackageReference Include="ReactiveUI" Version="18.4.34" />
         <PackageReference Include="ReactiveUI.Maui" Version="18.0.4" />

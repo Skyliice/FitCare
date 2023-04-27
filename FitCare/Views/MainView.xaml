@@ -3,22 +3,29 @@
                           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                           xmlns:maui="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
                           xmlns:viewModels="clr-namespace:FitCare.ViewModels"
-                          x:Class="FitCare.MainPage" Title="" BackgroundColor="#353140">
-    
+                          xmlns:maui1="clr-namespace:CalendarView.MAUI;assembly=CalendarView.MAUI"
+                          x:Class="FitCare.MainPage" Title="Главная" BackgroundColor="#353140">
     <Grid Padding="0" Margin="0">
-        <ScrollView>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <maui1:CalendarView x:Name="CalendarView" Margin="0"
+                            HeightRequest="350" BorderStyle="{StaticResource CalendarBorderStyle}" ButtonsColor="Transparent"
+                            BackgroundColor="{StaticResource Primary}" DayStyle="{StaticResource CalendarDayStyle}" 
+                            FirstDayOfWeek="Monday" FirstDayOfWeekStyle="{StaticResource CalendarDayStyle}"
+                            LastDayOfWeekStyle="{StaticResource CalendarLastDayStyle}" DayNameStyle="{StaticResource CalendarDayNameStyle}"
+                            DayNameFirstDayOfWeekStyle="{StaticResource CalendarDayNameStyle}" DayNameLastDayOfWeekStyle="{StaticResource CalendarDayNameStyle}"
+                             HeaderBackground="Transparent" ShowChangeMonthArrows="False" MonthStyle="{StaticResource MonthLabelStyle}"
+                            SelectedDayStyle="{StaticResource SelectedCalendarDateStyle}" TodayStyle="{StaticResource CalendarTodayStyle}"/>
+        <Label Grid.Row="1" TextColor="LightGray" Text="Пока нечего показывать!" FontSize="16" FontAttributes="Bold"
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <ScrollView Grid.Row="1">
             <VerticalStackLayout
                 Spacing="25"
                 Padding="30,0"
                 VerticalOptions="Center">
-
-                <Label
-                    Text="Welcome to .NET Multi-platform App UI"
-                    SemanticProperties.HeadingLevel="Level2"
-                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                    FontSize="18" TextColor="White"
-                    HorizontalOptions="Center" />
-
+                
             </VerticalStackLayout>
         </ScrollView>
     </Grid>
